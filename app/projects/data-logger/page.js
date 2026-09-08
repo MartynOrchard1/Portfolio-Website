@@ -47,6 +47,7 @@ const analysisFeatures = [
   'GPS-quality analysis',
   'Malformed-row and missing-data reporting',
   'Synthetic-data detection (flags fabricated or interpolated rows)',
+  'AI-generated session summaries and a natural-language Q&A interface over the session data, built on the Claude API',
 ];
 
 const exportFormats = ['CSV', 'JSON', 'Excel', 'PDF', 'HTML', 'PNG', 'ZIP'];
@@ -120,7 +121,10 @@ export default function DataLoggerProject() {
         <h2 className="mt-16 font-display text-2xl font-semibold">The analysis application</h2>
         <p className="mt-3 text-sm leading-relaxed text-ink/70">
           A Streamlit application built specifically to read the CSVs the logger produces — the
-          brief was a serious motorsport analysis tool, not a generic CSV viewer.
+          brief was a serious motorsport analysis tool, not a generic CSV viewer. It also has an AI
+          layer on top, built on the Claude API: it writes a plain-language summary of a session and
+          answers follow-up questions about the data directly, rather than making you dig through
+          graphs for everything.
         </p>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {analysisFeatures.map((feature) => (
